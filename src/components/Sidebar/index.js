@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { Flex, NavLink } from 'theme-ui';
+import { Flex } from 'theme-ui';
 import Item from './Item';
-
-function isUrlMatching(location) {
-  return window.location.pathname === location; 
-}
 
 function Sidebar() {
   return (
@@ -17,33 +13,33 @@ function Sidebar() {
       }}
     >
       <Item 
-        href="/finitecapacitymservers" 
+        href="/user/finitecapacitymservers" 
       >
         m-Servidores com Capacidade Finita
       </Item>
       <Item 
-        href="/finitecapacitypopulationmservers" 
+        href="/user/finitecapacitypopulationmservers" 
       >
         m-Servidores com Capacidade e População Finitos
       </Item>
       <Item 
-        href="/finitecapacity" 
+        href="/user/finitecapacity" 
       >
         Capacidade Finita
       </Item>
-      <Item href="/finitepopulationiservers">
+      <Item href="/user/finitepopulationiservers">
         População Finita com Infinitos Servidores
       </Item>
-      <Item href="/finitepopulationserver">
+      <Item href="/user/finitepopulationserver">
         População Finita com um Servidor
       </Item>
-      <Item href="/iservers">
+      <Item href="/user/iservers">
         Infinitos Servidores
       </Item>
-      <Item href="/mservers">
+      <Item href="/user/mservers">
         m-Servidores
       </Item>
-      <Item href="/">
+      <Item href="/user/classic">
         O Sistema Clássico
       </Item>
     </Flex>

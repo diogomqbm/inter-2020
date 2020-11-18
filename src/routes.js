@@ -6,40 +6,58 @@ import FinitePopulationIServers from './components/Queues/FinitePopulationIServe
 import FinitePopulationServer from './components/Queues/FinitePopulationServer';
 import IServers from './components/Queues/IServers';
 import MServers from './components/Queues/MServers';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import User from './pages/User';
 
 const routes = [
   {
-    path: '/',
-    exact: true,
+    path: '/user',
+    component: User,
+    routes: [
+  {
+    path: '/user/classic',
     component: Queues
   },
   {
-    path: '/mservers',
+    path: '/user/mservers',
     component: MServers
   },
   {
-    path: '/iservers',
+    path: '/user/iservers',
     component: IServers
   },
   {
-    path: '/finitepopulationserver',
+    path: '/user/finitepopulationserver',
     component: FinitePopulationServer
   },
   {
-    path: '/finitepopulationiservers',
+    path: '/user/finitepopulationiservers',
     component: FinitePopulationIServers
   },
   {
-    path: '/finitecapacity',
+    path: '/user/finitecapacity',
     component: FiniteCapacity
   },
   {
-    path: '/finitecapacitymservers',
+    path: '/user/finitecapacitymservers',
     component: FiniteCapacityMServers
   },
   {
-    path: '/finitecapacitypopulationmservers',
+    path: '/user/finitecapacitypopulationmservers',
     component: FiniteCapacityPopulationMServers
+  },
+    ]
+  },
+  {
+    path: '/',
+    exact: true,
+    component: Login
+  },
+  {
+    path: '/signup',
+    exact: true,
+    component: Signup
   }
 ]
 
