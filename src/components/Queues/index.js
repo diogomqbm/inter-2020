@@ -56,10 +56,14 @@ function Queues() {
         <Heading as="h3">{(100 * trafficIntensity).toFixed(2)}%</Heading>
         <Heading>Probabilidade de não ter nenhum usuário</Heading>
         <Heading as="h3">{(100 * (1 - trafficIntensity)).toFixed(2)}%</Heading>
+        <Heading>Probabilidade de 1 ou mais usuários no sistema</Heading>
+        <Heading as="h3">{100 * trafficIntensity.toFixed(2)}%</Heading>
         {users > 0 && (
         <>
         <Heading>Probabilidade de n usuários no sistema</Heading>
         <Heading as="h3">{(Math.pow(trafficIntensity, users) * (100 * (1 - trafficIntensity))).toFixed(2)}%</Heading>
+        <Heading>Probabilidade de n ou mais usuários no sistema</Heading>
+        <Heading as="h3">{100 * nMoreUser(trafficIntensity, users).toFixed(2)}%</Heading>
         </>
         )}
         <Heading>Tempo médio</Heading>
@@ -71,6 +75,10 @@ function Queues() {
       </Card>
     </Box>
   )
+}
+
+function nMoreUser(trafficIntensity, users) {
+  return Math.pow(trafficIntensity, users);
 }
 
 function avgTime(processing, trafficIntensity) {
