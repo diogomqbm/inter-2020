@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Box, Grid, Text} from 'theme-ui';
+import Sidebar from './components/Sidebar';
+import routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Text as="h1" p={5}>Análise de desempenho</Text>
+      <Grid width={[ null, 150 ]} pl={3} pr={5}>
+        <Router>
+          <Sidebar />
+          <Switch>
+            {routes.map(r => (
+              <Route key={r.path} {...r} />
+            ))} 
+          </Switch>
+        </Router>
+      </Grid>
+    </Box>
   );
 }
 
