@@ -14,7 +14,7 @@ function avgTime(processing) {
   return 1 / processing;
 }
 
-function getTrafficIntensity(requisitions, processing) {
+export function getTrafficIntensity(requisitions, processing) {
   const result = requisitions / processing;
   if (result < 0.0) {
     return 0.0;
