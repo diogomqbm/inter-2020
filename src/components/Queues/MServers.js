@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Card, Grid, Heading, Input, Label, Slider, Text } from 'theme-ui';
 
-function factorial(number) {
+export function factorial(number) {
   var result = 1;
 
   for (var i = number; i > 0; i--) {
